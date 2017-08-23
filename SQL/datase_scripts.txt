@@ -1,0 +1,24 @@
+
+1. Create collection schema scrips
+	db.createCollection( "stolen_cars",
+	   { validator: { $and:
+		  [
+			 { Vehicle_Registration: { $type: "string", $exists: true}},
+			 { Vehicle_Make: { $type: "string" } },
+			 { Vehicle_Model: { $type: "string" } },
+			 { Vehicle_Owner: { $type: "object" } },
+			 { "Vehicle_Owner.name": { $type: "string" } },
+			 { "Vehicle_Owner.number": { $type: "string" } },
+			 { "Vehicle_Owner.address": { $type: "string" } }
+		  ]
+	   }
+	} );
+
+2. Create intial records
+	db.stolen_cars.insert({Vehicle_Registration:'29A-000.03',Vehicle_Make:'BMW', Vehicle_Model:'230i Couple', Vehicle_Owner:{name:"Anh nguyen",number:"0123456789",address:"12 Dong Khoi Street, Ho Chi Minh city, Viet Nam"}});
+	db.stolen_cars.insert({Vehicle_Registration:'51A-178.12',Vehicle_Make:'Ford', Vehicle_Model:'Focus RS', Vehicle_Owner:'Vincent Pham');
+	db.stolen_cars.insert({Vehicle_Registration:'50C-17-15',Vehicle_Make:'BMW', Vehicle_Model:'X3 xDrive45i', Vehicle_Owner:'Trung Nguyen');
+	db.stolen_cars.insert(Vehicle_Registration:'12SA-3456',Vehicle_Make:'Toyota', Vehicle_Model:'Avalon', Vehicle_Owner:'Quoc Hoang');
+	db.stolen_cars.insert(Vehicle_Registration:'34BC-3465',Vehicle_Make:'Ford', Vehicle_Model:'Fiesta ST', Vehicle_Owner:'Quoc Hoang');
+	db.stolen_cars.insert(Vehicle_Registration:'56FE-3546',Vehicle_Make:'Ford', Vehicle_Model:'FT', Vehicle_Owner:'Hanh Nguyen');
+	db.stolen_cars.insert(Vehicle_Registration:'78GH-3654',Vehicle_Make:'Toyota', Vehicle_Model:'Camry', Vehicle_Owner:'Chien Pham');
