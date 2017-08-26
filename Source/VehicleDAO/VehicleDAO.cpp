@@ -17,7 +17,7 @@
 
 #include <mongocxx/exception/query_exception.hpp>
 
-#ifdef _UNICODE
+#ifdef _WIN32
 #define DECODE_UTF8(s) decodeUTF8(s)
 #define ENCODE_UTF8(s) encodeUTF8(s)
 #else

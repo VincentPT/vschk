@@ -1,0 +1,3 @@
+// the configured options and settings for Tutorial
+#define MKOCR_VERSION_MAJOR @MKOCR_VERSION_MAJOR@
+#define MKOCR_VERSION_MINOR @MKOCR_VERSION_MINOR@

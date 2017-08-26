@@ -5,7 +5,7 @@
 #define VEHICLEOBJECTS_API __declspec(dllimport)
 #endif
 #include <string>
-#ifdef _UNICODE
+#ifdef _WIN32
 typedef std::wstring TSTRING;
 #else
 typedef std::string TSTRING;
