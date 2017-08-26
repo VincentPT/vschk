@@ -22,7 +22,7 @@
     <ProjectGuid>{7DBD9AEC-3732-41A4-B12E-E86518DB794C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>VehicleDAO</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

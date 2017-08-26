@@ -22,7 +22,7 @@
     <ProjectGuid>{8EA02FAE-5176-4E47-9643-2B14887DB1BC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>VehicleServices</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -22,7 +22,7 @@
     <ProjectGuid>{D73EBFEE-4F98-4A71-9BCB-7DB52ED6A6B0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>VehicleWebApp</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -125,30 +125,30 @@ xcopy /Y "$(WTK_SDK_DIR)\bin\zlibd.dll" "$(ProjectDir)\bin"</Command>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>HPDF_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WTK_SDK_DIR)\include;$(ProjectDir)..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\Wt 3.3.7 msvs2015 x64\include;$(ProjectDir)..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(WTK_SDK_DIR)\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\Wt 3.3.7 msvs2015 x64\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>libhpdfd.lib;wtd.lib;wtdbod.lib;wtdbofirebirdd.lib;wtdbofirebirdd.lib;wtdbomysqld.lib;wtdbopostgresd.lib;wtdbosqlite3d.lib;wthttpd.lib;wtisapid.lib;wttestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y "$(WTK_SDK_DIR)\bin\libeay32d.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\libhpdfd.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\libmariadbd.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\libpng14d.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\ssleay32d.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtd.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtdbod.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtdbofirebirdd.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtdbomysqld.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtdbopostgresd.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtdbosqlite3d.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wthttpd.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wttestd.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\zlib.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\zlibd.dll" "$(ProjectDir)\bin"</Command>
+      <Command>xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\libeay32d.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\libhpdfd.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\libmariadbd.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\libpng14d.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\ssleay32d.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtd.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtdbod.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtdbofirebirdd.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtdbomysqld.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtdbopostgresd.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtdbosqlite3d.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wthttpd.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wttestd.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\zlib.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\zlibd.dll" "$(ProjectDir)\bin"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -196,31 +196,31 @@ xcopy /Y "$(WTK_SDK_DIR)\bin\zlib.dll" "$(ProjectDir)\bin"</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>HPDF_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WTK_SDK_DIR)\include;$(ProjectDir)..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\Wt 3.3.7 msvs2015 x64\include;$(ProjectDir)..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(WTK_SDK_DIR)\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\Wt 3.3.7 msvs2015 x64\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>libhpdf.lib;wt.lib;wtdbo.lib;wtdbofirebird.lib;wtdbofirebird.lib;wtdbomysql.lib;wtdbopostgres.lib;wtdbosqlite3.lib;wthttp.lib;wtisapi.lib;wttest.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y "$(WTK_SDK_DIR)\bin\libeay32.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\libhpdf.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\libmariadb.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\libpng14.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\ssleay32.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wt.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtdbo.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtdbofirebird.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtdbomysql.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtdbopostgres.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wtdbosqlite3.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wthttp.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\wttest.dll" "$(ProjectDir)\bin"
-xcopy /Y "$(WTK_SDK_DIR)\bin\zlib.dll" "$(ProjectDir)\bin"</Command>
+      <Command>xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\libeay32.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\libhpdf.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\libmariadb.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\libpng14.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\ssleay32.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wt.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtdbo.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtdbofirebird.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtdbomysql.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtdbopostgres.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wtdbosqlite3.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wthttp.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\wttest.dll" "$(ProjectDir)\bin"
+xcopy /Y "C:\Program Files\Wt 3.3.7 msvs2015 x64\bin\zlib.dll" "$(ProjectDir)\bin"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
