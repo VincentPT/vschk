@@ -1,5 +1,2 @@
 dependencies:
-    pvt.cppan.demo.boost.optional: 1.64.0
-    pvt.cppan.demo.boost.smart_ptr: 1.64.0
-    pvt.cppan.demo.boost.utility: 1.64.0
     pvt.cppan.demo.microsoft.cpprestsdk: 2.9.1

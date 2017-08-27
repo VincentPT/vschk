@@ -19,6 +19,10 @@ The project is focus on traning C++ and it uses some following technologies.
   For Compiling: At first time, when you build the solution, it needs download some dependency packages from internet.
   For Running and Testing: If you choose cloud database server, the application need connect to internet to run.
 
+### Install development environment
+* install Webtoolkit
+  sudo apt-get install witty witty-dev
+  
 ### Initialize Database
 
 The solution is using mongodb cloud and the database is already initalized.

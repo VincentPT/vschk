@@ -6,6 +6,7 @@
 #endif
 #include <string>
 #ifdef _WIN32
+#define _UNICODE_STRING
 typedef std::wstring TSTRING;
 #else
 typedef std::string TSTRING;

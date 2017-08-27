@@ -14,10 +14,15 @@ set(SOURCES
     VehicleOwner.h
 )
 
+# cpprest directories
+include_directories(${CPPREST_INCLUDE_DIR})
+link_directories(${CPPREST_LIB_DIR})
+
 # define project's build target with project's source files
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 # add macros
 add_definitions(-DVEHICLEOBJECTS_EXPORTS)
+# add compile options
 target_compile_options(${PROJECT_NAME} PRIVATE /utf-8)
-target_link_libraries(${PROJECT_NAME} PRIVATE pvt.cppan.demo.microsoft.cpprestsdk-2.9.1)
+target_link_libraries(${PROJECT_NAME} PRIVATE ${CPPREST_LIB_NAME})
