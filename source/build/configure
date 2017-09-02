@@ -1,0 +1,2 @@
+rm -rf CMakeCache.txt
+cmake ..
