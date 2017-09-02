@@ -35,7 +35,7 @@ namespace crab {
 				_code = (ResponseCode)(int)response.get("code");
 			}
 			if (response.contains("message")) {
-				_message = response.get("message");
+				_message = (std::string)response.get("message");
 			}
 			if (response.contains("result")) {
 				_result = response.get("result");

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "WSVehicleSearch.h"
-#include "VehicleDAO\VehicleDAO.h"
+#include "VehicleDAO/VehicleDAO.h"
 #include "RESTResponse.h"
 
 using namespace crab;
@@ -71,5 +71,6 @@ void WSVehicleSeach::doPost(http_request& message, const std::vector<crab::TSTRI
 	{
 		response.result(U("[]"));
 	}
+	CONSOLE_OUT_T << "results:" << response.toString() << std::endl;
 	message.reply(status_codes::OK, response.toString(), U("application/json"));
 }

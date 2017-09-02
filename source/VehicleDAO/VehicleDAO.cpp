@@ -13,7 +13,7 @@
 #include <locale>
 #include <codecvt>
 #include <iostream>
-#include "common\IniReader.h"
+#include "common/IniReader.h"
 
 #include <mongocxx/exception/query_exception.hpp>
 

@@ -21,8 +21,12 @@ namespace crab {
 	}
 
 	void ServiceEngine::createListener() {
-		if (_listener) return;		
-		web::uri theLisentUri(U("http://localhost:") + std::to_wstring(_port));
+		if (_listener) return;
+#if _WIN32
+		web::uri theLisentUri(U("http://localhost:") + TO_STRING_T(_port));
+#else
+		web::uri theLisentUri(U("http://0.0.0.0:") + TO_STRING_T(_port));
+#endif
 		_listener = new http_listener(theLisentUri);
 
 		_listener->support(methods::GET, std::bind(&ServiceEngine::handle_get, this, std::placeholders::_1));
@@ -152,7 +156,7 @@ namespace crab {
 	void ServiceEngine::handle_request(http_request& message, const RequestHandler& requestHandler) {
 		auto relative_uri = message.relative_uri();
 		auto& path = relative_uri.path();
-		std::wcout << U("received request at") << path << std::endl;
+		CONSOLE_OUT_T << U("received request at") << path << std::endl;
 		std::vector<TSTRING> params;
 		auto handler = getHandler(path, &params);
 		if (!handler) {

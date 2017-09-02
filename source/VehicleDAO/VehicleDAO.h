@@ -1,5 +1,5 @@
 #include "VehicleDAOMacros.h"
-#include "VehicleObjects\StolenVehicleInfo.h"
+#include "VehicleObjects/StolenVehicleInfo.h"
 
 // This class is exported from the VehicleDAO.dll
 class VEHICLEDAO_API StolenVehicleDAO {

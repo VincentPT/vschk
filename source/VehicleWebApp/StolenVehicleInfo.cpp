@@ -1,3 +1,4 @@
+#include "WebAppMacros.h"
 #include "StolenVehicleInfo.h"
 	
 #include <Wt/Json/Value>
@@ -46,23 +47,15 @@ void StolenVehicleInfo::setVehicleOwner(const VehicleOwnerRef& vehicleOwner) {
 
 void StolenVehicleInfo::fromJsonObject(const JSON_T& value) {
 	if (value.contains(JSON_FILED_REGISTRATION)) {
-		_vehicleRegistration = value.at(JSON_FILED_REGISTRATION);
-	}
-	else {
-		_vehicleRegistration.clear();
+		_vehicleRegistration = JSON_VALUE_TO_TSTRING(value.at(JSON_FILED_REGISTRATION));
 	}
 	if (value.contains(JSON_FILED_MAKE)) {
-		_vehicleMake = value.at(JSON_FILED_MAKE);
-	}
-	else {
-		_vehicleMake.clear();
+		_vehicleMake = JSON_VALUE_TO_TSTRING(value.at(JSON_FILED_MAKE));
 	}
 	if (value.contains(JSON_FILED_MODEL)) {
-		_vehicleModel = value.at(JSON_FILED_MODEL);
+		_vehicleModel = JSON_VALUE_TO_TSTRING(value.at(JSON_FILED_MODEL));
 	}
-	else {
-		_vehicleModel.clear();
-	}
+
 	if (value.contains(JSON_FILED_OWNER)) {
 		_vehicleOwner = std::make_shared<VehicleOwner>();
 		_vehicleOwner->fromJsonObject(value.at(JSON_FILED_OWNER));

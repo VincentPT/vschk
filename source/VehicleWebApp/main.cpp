@@ -1,3 +1,5 @@
+#include "WebAppMacros.h"
+
 #include <Wt/WApplication>
 #include <Wt/WServer>
 #include <Wt/WBreak>
@@ -27,14 +29,14 @@
 #include <thread>
 #include <condition_variable>
 
+#include <cpprest/http_client.h>
+#include <cpprest/filestream.h>
+
 #include "HttpRequester.h"
-#include "common\IniReader.h"
+#include "common/IniReader.h"
 
 // c++0x only, for std::bind
 // #include <functional>
-
-#include <cpprest/http_client.h>
-#include <cpprest/filestream.h>
 
 using namespace utility;                    // Common utilities like string conversions
 using namespace web;                        // Common features like URIs.
@@ -179,18 +181,17 @@ void VehicleApplication::doSearch()
 {
 	JsonRequestObject search_object;
 	if (_used_vehicle_registration->isChecked()) {
-		search_object[U(JSON_FILED_REGISTRATION)] = JsonRequestObject::string(_vehicle_registration_input->text());
+		search_object[U(JSON_FILED_REGISTRATION)] = JsonRequestObject::string(WSTRING2T(_vehicle_registration_input->text()));
 	}
 	if (_used_vehicle_make_input->isChecked()) {
-		search_object[U(JSON_FILED_MAKE)] = JsonRequestObject::string(_vehicle_make_input->text());
+		search_object[U(JSON_FILED_MAKE)] = JsonRequestObject::string(WSTRING2T(_vehicle_make_input->text()));
 	}
 	if (_used_vehicle_model_input->isChecked()) {
-		search_object[U(JSON_FILED_MODEL)] = JsonRequestObject::string(_vehicle_model_input->text());
+		search_object[U(JSON_FILED_MODEL)] = JsonRequestObject::string(WSTRING2T(_vehicle_model_input->text()));
 	}
 	if (_used_vehicle_owner_input->isChecked()) {
-		search_object[U(JSON_FILED_OWNER)] = JsonRequestObject::string(_vehicle_owner_input->text());
+		search_object[U(JSON_FILED_OWNER)] = JsonRequestObject::string(WSTRING2T(_vehicle_owner_input->text()));
 	}
-
 	if (search_object.size() == 0) {
 		_message->setText("No filed specified");
 		return;
@@ -200,7 +201,7 @@ void VehicleApplication::doSearch()
 	config_reader.read("app.ini");
 	std::string uri = "http://localhost:12345/vehicles";
 	config_reader.get("services", "vehicle_search_services", uri);
-	auto uri_w = WString::fromUTF8(uri);
+	auto uri_t = STRING2T(uri);
 
 	/*webpage does not update if use anysnchornous htpp request API*/
 #if USE_ASYNCHRONOUS_REQUEST
@@ -212,7 +213,7 @@ void VehicleApplication::doSearch()
 #else
 	HttpRequester requester;
 	crab::client::RESTResponse restResponse;	
-	requester.sendPost(uri_w, search_object, [this, &restResponse](const http_response& response) {
+	requester.sendPost(uri_t, search_object, [this, &restResponse](const http_response& response) {
 		auto result = response.extract_utf8string();
 		auto reponseContent = result.get();
 
@@ -235,13 +236,13 @@ void VehicleApplication::doSearch()
 					JSON_T& vehicle = jsonValue;
 					stolenVehilce.fromJsonObject(vehicle);
 
-					auto vehicleRegistration = boost::any(Wt::WString::fromUTF8(stolenVehilce.getVehicleRegistration()));
-					auto vehicleMake = boost::any(Wt::WString::fromUTF8(stolenVehilce.getVehicleMake()));
-					auto vehicleModel = boost::any(Wt::WString::fromUTF8(stolenVehilce.getVehicleModel()));
-					auto vehicleOwner = boost::any(L"");
+					auto vehicleRegistration = boost::any(Wt::WString(stolenVehilce.getVehicleRegistration()));
+					auto vehicleMake = boost::any(Wt::WString(stolenVehilce.getVehicleMake()));
+					auto vehicleModel = boost::any(Wt::WString(stolenVehilce.getVehicleModel()));
+					auto vehicleOwner = boost::any(Wt::WString(L""));
 					auto ownerRef = stolenVehilce.getVehicleOwner();
 					if (ownerRef) {
-						vehicleOwner = boost::any(Wt::WString::fromUTF8(ownerRef->getName()));
+						vehicleOwner = boost::any(Wt::WString(ownerRef->getName()));
 					}
 
 					model->insertRow(row);
@@ -292,13 +293,13 @@ void VehicleApplication::handleSerachResult(
 					JSON_T& vehicle = jsonValue;
 					stolenVehilce.fromJsonObject(vehicle);
 
-					auto vehicleRegistration = boost::any(Wt::WString::fromUTF8(stolenVehilce.getVehicleRegistration()));
-					auto vehicleMake = boost::any(Wt::WString::fromUTF8(stolenVehilce.getVehicleMake()));
-					auto vehicleModel = boost::any(Wt::WString::fromUTF8(stolenVehilce.getVehicleModel()));
+					auto vehicleRegistration = boost::any(stolenVehilce.getVehicleRegistration()));
+					auto vehicleMake = boost::any(stolenVehilce.getVehicleMake());
+					auto vehicleModel = boost::any(stolenVehilce.getVehicleModel());
 					auto vehicleOwner = boost::any(L"");
 					auto ownerRef = stolenVehilce.getVehicleOwner();
 					if (ownerRef) {
-						vehicleOwner = boost::any(Wt::WString::fromUTF8(ownerRef->getName()));
+						vehicleOwner = boost::any(ownerRef->getName());
 					}
 
 					model->insertRow(row);

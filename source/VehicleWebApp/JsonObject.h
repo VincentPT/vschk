@@ -3,7 +3,6 @@
 
 namespace Wt { namespace Json { class Object; } }
 typedef Wt::Json::Object JSON_T;
-typedef std::string TSTRING;
 
 class JsonObject
 {

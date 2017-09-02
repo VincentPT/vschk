@@ -1,3 +1,5 @@
+#include "WebAppMacros.h"
+
 #include "VehicleOwner.h"
 
 #include <Wt/Json/Value>
@@ -33,24 +35,9 @@ void VehicleOwner::setAddress(const TSTRING& address) {
 }
 
 void VehicleOwner::fromJsonObject(const JSON_T& value) {
-	if (value.contains(JSON_FILED_NAME)) {
-		_name = value.at(JSON_FILED_NAME);
-	}
-	else {
-		_name.clear();
-	}
-	if (value.contains(JSON_FILED_NUMBER)) {
-		_number = value.at(JSON_FILED_NUMBER);
-	}
-	else {
-		_number.clear();
-	}
-	if (value.contains(JSON_FILED_ADDRESS)) {
-		_address = value.at(JSON_FILED_ADDRESS);
-	}
-	else {
-		_address.clear();
-	}
+	if (value.contains(JSON_FILED_NAME)) _name = JSON_VALUE_TO_TSTRING(value.at(JSON_FILED_NAME));
+	if (value.contains(JSON_FILED_NUMBER)) _number = JSON_VALUE_TO_TSTRING(value.at(JSON_FILED_NUMBER));
+	if (value.contains(JSON_FILED_ADDRESS)) _address = JSON_VALUE_TO_TSTRING(value.at(JSON_FILED_ADDRESS));
 }
 
 void VehicleOwner::toJsonObject(JSON_T& obj) const {

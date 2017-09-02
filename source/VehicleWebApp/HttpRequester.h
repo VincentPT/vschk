@@ -13,7 +13,7 @@ public:
 	HttpRequester();
 	~HttpRequester();
 
-	void sendGet(const std::wstring& url, const ReponseHandler& f);
-	void sendPost(const std::wstring& url, const JsonRequestObject& content, const ReponseHandler& f);
+	void sendGet(const TSTRING& url, const ReponseHandler& f);
+	void sendPost(const TSTRING& url, const JsonRequestObject& content, const ReponseHandler& f);
 };
 
