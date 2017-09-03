@@ -50,7 +50,6 @@ static mongocxx::client* s_connectionInstance = nullptr;
 
 bool StolenVehicleDAO::connectToDatabase() {
 	s_clientInstance = new mongocxx::instance();
-	//s_connectionInstance = new mongocxx::client( mongocxx::uri("mongodb://dbadmin:mydbadmin@cluster0-shard-00-00-d2qec.mongodb.net:27017,cluster0-shard-00-01-d2qec.mongodb.net:27017,cluster0-shard-00-02-d2qec.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin") );
 	return true;
 }
 
@@ -64,7 +63,7 @@ std::shared_ptr<std::list<StolenVehicleInfo>> findVehicle(const bsoncxx::builder
 	//if (s_connectionInstance == nullptr) return nullptr;
 	IniReader config_reader;
 	config_reader.read("app.ini");
-	std::string connection_settings = "mongodb://dbadmin:mydbadmin@cluster0-shard-00-00-d2qec.mongodb.net:27017,cluster0-shard-00-01-d2qec.mongodb.net:27017,cluster0-shard-00-02-d2qec.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
+	std::string connection_settings;
 	std::string database = "test";
 	std::string collection_name = "stolen_cars";
 
