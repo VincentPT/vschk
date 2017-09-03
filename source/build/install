@@ -24,16 +24,16 @@ fi
 cd ${CURRENT_DIR}
 
 # copy files for VehicleServices
-cp ./Source/build/VehicleServices/VehicleServices ./bin/linux/VehicleServices/
-# cp ./Source/build/VehicleObjects/libVehicleObjects.so ./bin/linux/VehicleServices/
-# cp ./Source/build/VehicleDAO/libVehicleDAO.so ./bin/linux/VehicleServices/
-cp ./Source/VehicleServices/app.ini ./bin/linux/VehicleServices/
+cp ./source/build/VehicleServices/VehicleServices ./bin/linux/VehicleServices/
+# cp ./source/build/VehicleObjects/libVehicleObjects.so ./bin/linux/VehicleServices/
+# cp ./source/build/VehicleDAO/libVehicleDAO.so ./bin/linux/VehicleServices/
+cp ./source/VehicleServices/app.ini ./bin/linux/VehicleServices/
 
 # copy files for VehicleWebApp
-cp ./Source/build/VehicleWebApp/VehicleWebApp ./bin/linux/VehicleWebApp/
-cp ./Source/VehicleWebApp/app.ini ./bin/linux/VehicleWebApp/
-cp ./Source/VehicleWebApp/run-web-app ./bin/linux/VehicleWebApp/
-cp -r ./Source/VehicleWebApp/bin/docroot ./bin/
+cp ./source/build/VehicleWebApp/VehicleWebApp ./bin/linux/VehicleWebApp/
+cp ./source/VehicleWebApp/app.ini ./bin/linux/VehicleWebApp/
+cp ./source/VehicleWebApp/run-web-app ./bin/linux/VehicleWebApp/
+cp -r ./source/VehicleWebApp/docroot ./bin/
 
 echo "Installed vehicle services to: ${CURRENT_DIR}/bin/linux/VehicleServices/"
 echo "Installed vehicle web app to: ${CURRENT_DIR}/bin/linux/VehicleWebApp/"
