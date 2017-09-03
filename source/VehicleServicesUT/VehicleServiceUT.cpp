@@ -114,6 +114,6 @@ TEST_METHOD(TestRegistrationFound5)
 	TEST_ASSERT(ownerObj.get() != nullptr, "Owner object should not be null");
 	auto ownerName = ownerObj->getName();
 
-	TEST_ASSERT(toUpper(vehicle_owner) != toUpper(ownerName), "one record found but not match the query");
+	TEST_ASSERT(toUpper(vehicle_owner) == toUpper(ownerName), "one record found but not match the query");
 	dao.disconnectToDatabase();
 }
