@@ -46,6 +46,12 @@ endif()
 target_link_libraries(${PROJECT_NAME} PRIVATE VehicleObjects)
 target_link_libraries(${PROJECT_NAME} PRIVATE VehicleDAO)
 
+if(UNIX)
+    target_link_libraries(${PROJECT_NAME} PRIVATE boost_system)
+    target_link_libraries(${PROJECT_NAME} PRIVATE crypto)
+    target_link_libraries(${PROJECT_NAME} PRIVATE ssl)
+endif()
+
 if (MSVC)
     SET (INSTALL_DEST ${CMAKE_SOURCE_DIR}/../bin/windows/VehicleServices)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Debug/${PROJECT_NAME}.exe DESTINATION ${INSTALL_DEST} CONFIGURATIONS Debug)

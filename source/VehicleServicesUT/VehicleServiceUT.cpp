@@ -6,7 +6,6 @@
 
 #include "VehicleServicesUTMacros.h"
 #include "VehicleDAO/VehicleDAO.h"
-#include <tchar.h>
 #include <locale>         // std::locale, std::touppe
 #include <algorithm>
 #include "common/string_util.hpp"
